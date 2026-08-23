@@ -201,9 +201,7 @@ Commit and push.
 Once the workflow succeeds, the site will be live:  
 
 ```text  
-
 https://YOUR_USERNAME.github.io/REPOSITORY_NAME  
-
 ```  
 
 # Step 3: Install Git  
@@ -213,9 +211,7 @@ https://git-scm.com/download/win
 Verify:  
 
 ```powershell  
-
 git --version  
-
 ```  
 
 # Step 4: Install Obsidian Git  
@@ -223,15 +219,10 @@ git --version
 Inside Obsidian:  
 
 ```text  
-
 Settings  
-
 → Community Plugins  
-
 → Browse  
-
 → Obsidian Git  
-
 ```  
 
 Install and enable it.  
@@ -240,20 +231,15 @@ Install and enable it.
 At first I opened:  
 
 ```text  
-
 D:\Repositories\calculus  
-
 ```  
 
 as my vault.  
 
-  
 This caused Canvas file cards to store paths like:  
 
 ```json  
-
 "file":"content/concepts/rate-of-change.md"  
-
 ```  
 
   
@@ -263,18 +249,14 @@ Quartz interpreted those paths incorrectly and generated broken links.
 Open:  
 
 ```text  
-
 D:\Repositories\calculus\content  
-
 ```  
 
 as the Obsidian vault.  
 
 Now Canvas stores:  
 ```json  
-
 "file":"concepts/rate-of-change.md"  
-
 ```  
 
 which Quartz understands correctly.  
@@ -290,31 +272,18 @@ This solved:
 I use:  
 
 ```text  
-
 content/  
-
 ├── index.md  
-
 ├── Concepts/  
-
 │ ├── Rate of Change.md  
-
 │ ├── Accumulated Change.md  
-
 │ └── Signed Area.md  
-
 ├── Concept Maps/  
-
 │ ├── Functions and Derivatives.canvas  
-
 │ └── Integration.canvas  
-
 ├── Unit 1/  
-
 ├── Unit 2/  
-
 ├── Unit 6/  
-
 └── Resources/  
 
 ```  
@@ -325,48 +294,28 @@ Everything inside `content/` is published automatically.
 Instead of large text cards, I use:  
 
 ```text  
-
 Markdown Note  
-
 ↓  
-
 Canvas File Card  
-
 ```  
 Example note:  
 
 ```markdown  
-
 # Rate of Change  
 
-  
-
 $$  
-
 f(x)=F'(x)  
-
 $$  
-
-  
-
 How fast a quantity changes.  
-
 ```  
 
 When dragged into a Canvas:  
 
 ```text  
-
 Rate of Change  
-
 --------------  
-
 f(x)=F'(x)  
-
-  
-
 How fast a quantity changes.  
-
 ```  
 
 Advantages:  
@@ -383,47 +332,33 @@ LaTeX works correctly in Markdown notes:
 
 
 ```markdown  
-
 $$  
-
 F(b)-F(a)  
-
 =  
-
 \text{Signed Area}  
-
 $$  
-
 ```  
-
-
 
 In my experience:  
 
 - Markdown notes render LaTeX correctly.  
-
 - Canvas text cards do not reliably render LaTeX.  
 
 For best results, put mathematical content inside notes and use file cards in the Canvas.  
 # Daily Workflow  
-
 ## Create Notes  
 
 Create notes inside:  
 
 ```text  
-
 content/  
-
 ```  
 
 
 Example:  
 
 ```text  
-
 content/Unit 6/Section 6.1.md  
-
 ```  
 ## Create Concept Maps  
 
@@ -431,9 +366,7 @@ content/Unit 6/Section 6.1.md
 Create:  
 
 ```text  
-
 .canvas  
-
 ```  
 
 files and drag notes onto the Canvas as file cards.  
@@ -442,11 +375,8 @@ files and drag notes onto the Canvas as file cards.
 Use:  
 
 ```text  
-
 Ctrl+P  
-
 → Obsidian Git: Commit-and-sync  
-
 ```  
 
 
@@ -455,25 +385,15 @@ After syncing:
 
 
 ```text  
-
 Obsidian  
-
 ↓  
-
 GitHub  
-
 ↓  
-
 GitHub Actions  
-
 ↓  
-
 Quartz  
-
 ↓  
-
 Website Updated  
-
 ```  
 
 usually within a minute.  
