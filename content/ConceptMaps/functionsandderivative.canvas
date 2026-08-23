@@ -13,16 +13,16 @@
 		{"id":"2433d12037774685","type":"text","text":"increase/decrease/constant","x":-115,"y":-260,"width":250,"height":60},
 		{"id":"9a7ccf89c7d7754e","type":"text","text":"Min/Max","x":-115,"y":-145,"width":250,"height":60},
 		{"id":"50061937165474cc","type":"text","text":"concave up $\\cup$ / concave down $\\cap$","x":-115,"y":-55,"width":250,"height":60},
-		{"id":"68de920e810169ef","type":"file","file":"content/Concepts/Rate of change.md","x":135,"y":400,"width":245,"height":120},
-		{"id":"4e1e401590dc187b","type":"text","text":"unit","x":-470,"y":680,"width":105,"height":50,"color":"5"}
+		{"id":"4e1e401590dc187b","type":"text","text":"unit","x":-470,"y":680,"width":105,"height":50,"color":"5"},
+		{"id":"56535f228baa8a7e","x":464,"y":724,"width":216,"height":136,"type":"file","file":"content/Concepts/Rate of change.md"}
 	],
 	"edges":[
 		{"id":"e3fdfee07bc52885","fromNode":"c8b90e8e27fd5b22","fromSide":"top","toNode":"ef2d2d056b2117a3","toSide":"top","label":"always has these"},
 		{"id":"de9ca23faf11d98f","fromNode":"60b4dfd327b91aca","fromSide":"left","toNode":"c8b90e8e27fd5b22","toSide":"bottom","label":"is another"},
 		{"id":"09c098369c6c2720","fromNode":"c48d93dd6e6f283c","fromSide":"top","toNode":"c8b90e8e27fd5b22","toSide":"left","label":"an example of "},
-		{"id":"6f94892ff87df9fe","fromNode":"68de920e810169ef","fromSide":"top","toNode":"60b4dfd327b91aca","toSide":"bottom","label":"is a.."},
-		{"id":"ed3ddd669e9e4b56","fromNode":"68de920e810169ef","fromSide":"left","toNode":"c48d93dd6e6f283c","toSide":"right","label":"the derivative of "},
-		{"id":"5e74c78716035138","fromNode":"68de920e810169ef","fromSide":"left","toNode":"4e1e401590dc187b","toSide":"right","label":"also has a"},
+		{"id":"6f94892ff87df9fe","fromNode":"56535f228baa8a7e","fromSide":"top","toNode":"60b4dfd327b91aca","toSide":"bottom","label":"is a.."},
+		{"id":"ed3ddd669e9e4b56","fromNode":"56535f228baa8a7e","fromSide":"left","toNode":"c48d93dd6e6f283c","toSide":"right","label":"the derivative of "},
+		{"id":"5e74c78716035138","fromNode":"56535f228baa8a7e","fromSide":"left","toNode":"4e1e401590dc187b","toSide":"right","label":"also has a"},
 		{"id":"2481c70648912d4b","fromNode":"c48d93dd6e6f283c","fromSide":"bottom","toNode":"4e1e401590dc187b","toSide":"left","label":"also has a "},
 		{"id":"e32329834dee64b4","fromNode":"3c3f96c5785b7914","fromSide":"top","toNode":"7972115f54d57e88","toSide":"bottom","label":"the set of all"},
 		{"id":"d359dec69725467f","fromNode":"3c3f96c5785b7914","fromSide":"right","toNode":"8ed4fc1ae953e26c","toSide":"left"},
