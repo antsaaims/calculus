@@ -1,7 +1,6 @@
 {
 	"nodes":[
 		{"id":"ef2d2d056b2117a3","type":"group","x":-540,"y":-840,"width":780,"height":1140},
-		{"id":"4ef9b352149e1750","x":-1138,"y":-526,"width":400,"height":400,"type":"file","file":"content/function.md"},
 		{"id":"c8b90e8e27fd5b22","type":"text","text":"Functions","x":-740,"y":-400,"width":120,"height":60,"color":"3"},
 		{"id":"c48d93dd6e6f283c","type":"text","text":"Quantity function $F(x)$","x":-745,"y":400,"width":185,"height":60,"color":"3"},
 		{"id":"60b4dfd327b91aca","type":"text","text":"Derivative","x":-290,"y":200,"width":250,"height":60},
@@ -15,7 +14,8 @@
 		{"id":"8ed4fc1ae953e26c","type":"text","text":"Positive/$>0$ : above the $x$-axis,\nNegative/$<$ : below the $x$-axis,","x":480,"y":-500,"width":250,"height":140,"color":"6"},
 		{"id":"5cf5433237334f4a","type":"text","text":"Max: increase then decrease\nMin: decrease then increase","x":605,"y":-175,"width":250,"height":90,"color":"6"},
 		{"id":"2433d12037774685","type":"text","text":"increase/decrease/constant","x":-115,"y":-260,"width":250,"height":60},
-		{"id":"9a7ccf89c7d7754e","type":"text","text":"Min/Max","x":-115,"y":-145,"width":250,"height":60}
+		{"id":"9a7ccf89c7d7754e","type":"text","text":"Min/Max","x":-115,"y":-145,"width":250,"height":60},
+		{"id":"4ef9b352149e1750","x":-1320,"y":-545,"width":400,"height":400,"type":"file","file":"content/function.md"}
 	],
 	"edges":[
 		{"id":"e3fdfee07bc52885","fromNode":"c8b90e8e27fd5b22","fromSide":"top","toNode":"ef2d2d056b2117a3","toSide":"top","label":"always has these"},
