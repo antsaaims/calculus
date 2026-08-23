@@ -1,6 +1,7 @@
 *A free Obsidian + Quartz + GitHub Pages workflow for creating a course website with notes, concept maps, LaTeX, search, and automatic deployment.*  
 
-  ## Goal  
+
+## Goal  
 
 I wanted a website where I could:  
 
