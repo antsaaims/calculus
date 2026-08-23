@@ -1,0 +1,1 @@
+Hello, I'm a function $f(x)=y$. You see, I work perfectly fine!
