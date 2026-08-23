@@ -1,6 +1,7 @@
 {
 	"nodes":[
 		{"id":"ef2d2d056b2117a3","type":"group","x":-540,"y":-840,"width":780,"height":1140},
+		{"id":"4ef9b352149e1750","x":-1138,"y":-526,"width":400,"height":400,"type":"file","file":"content/function.md"},
 		{"id":"c8b90e8e27fd5b22","type":"text","text":"Functions","x":-740,"y":-400,"width":120,"height":60,"color":"3"},
 		{"id":"c48d93dd6e6f283c","type":"text","text":"Quantity function $F(x)$","x":-745,"y":400,"width":185,"height":60,"color":"3"},
 		{"id":"60b4dfd327b91aca","type":"text","text":"Derivative","x":-290,"y":200,"width":250,"height":60},
@@ -9,7 +10,6 @@
 		{"id":"7972115f54d57e88","type":"text","text":"Input/output","x":-440,"y":-620,"width":250,"height":60},
 		{"id":"4e1e401590dc187b","type":"text","text":"unit","x":-470,"y":680,"width":105,"height":50,"color":"5"},
 		{"id":"50061937165474cc","type":"text","text":"concave up $\\cup$ / concave down $\\cap$","x":-115,"y":-55,"width":250,"height":60},
-		{"id":"699402e7193129de","type":"file","file":"content/function.md","x":-1360,"y":-730,"width":440,"height":430},
 		{"id":"91756127ce9089e4","type":"text","text":"Sign (+/-/0)","x":-115,"y":-360,"width":250,"height":60},
 		{"id":"f1cdbffd0ba028e1","type":"text","text":"[[Rate of change]]","x":280,"y":680,"width":160,"height":60},
 		{"id":"8ed4fc1ae953e26c","type":"text","text":"Positive/$>0$ : above the $x$-axis,\nNegative/$<$ : below the $x$-axis,","x":480,"y":-500,"width":250,"height":140,"color":"6"},
