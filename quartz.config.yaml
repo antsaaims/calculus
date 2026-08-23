@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: antsaaims.githum.com/calculus
+  baseUrl: antsaaims.githum.io/calculus
   ignorePatterns:
     - private
     - templates
