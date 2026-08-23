@@ -16,7 +16,7 @@
 		{"id":"2433d12037774685","type":"text","text":"increase/decrease/constant","x":-115,"y":-260,"width":250,"height":60},
 		{"id":"9a7ccf89c7d7754e","type":"text","text":"Min/Max","x":-115,"y":-145,"width":250,"height":60},
 		{"id":"b0c29de9b124fbf6","x":639,"y":664,"width":400,"height":400,"type":"file","file":"concepts/Rate of change.md"},
-		{"id":"a92e8814ef063153","x":-1145,"y":5,"width":400,"height":400,"type":"file","file":"function.md"}
+		{"id":"a92e8814ef063153","x":-1145,"y":5,"width":400,"height":400,"type":"file","file":"concepts/function.md"}
 	],
 	"edges":[
 		{"id":"e3fdfee07bc52885","fromNode":"c8b90e8e27fd5b22","fromSide":"top","toNode":"ef2d2d056b2117a3","toSide":"top","label":"always has these"},
