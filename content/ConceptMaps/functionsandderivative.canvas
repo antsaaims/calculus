@@ -14,7 +14,7 @@
 		{"id":"9a7ccf89c7d7754e","type":"text","text":"Min/Max","x":-115,"y":-145,"width":250,"height":60},
 		{"id":"50061937165474cc","type":"text","text":"concave up $\\cup$ / concave down $\\cap$","x":-115,"y":-55,"width":250,"height":60},
 		{"id":"4e1e401590dc187b","type":"text","text":"unit","x":-470,"y":680,"width":105,"height":50,"color":"5"},
-		{"id":"56535f228baa8a7e","x":464,"y":724,"width":216,"height":136,"type":"file","file":"content/Concepts/Rate of change.md"}
+		{"id":"56535f228baa8a7e","x":464,"y":724,"width":216,"height":136,"type":"file","file":"content/Concepts/rate-of-change.md"}
 	],
 	"edges":[
 		{"id":"e3fdfee07bc52885","fromNode":"c8b90e8e27fd5b22","fromSide":"top","toNode":"ef2d2d056b2117a3","toSide":"top","label":"always has these"},
