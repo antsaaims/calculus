@@ -15,29 +15,17 @@ I wanted a website where I could:
 The final result is:  
 
 ```text  
-
 Obsidian  
-
 ↓  
-
 Obsidian Git  
-
 ↓  
-
 GitHub  
-
 ↓  
-
 GitHub Actions  
-
 ↓  
-
 Quartz  
-
 ↓  
-
 Course Website  
-
 ```  
 
 # Step 1: Create a Quartz Website  
@@ -45,30 +33,21 @@ Course Website
 ## Install Node.js  
 
 Download and install the latest LTS version of Node.js:  
-
 https://nodejs.org  
-
 
 Verify installation:  
 
-
 ```powershell  
-
 node --version  
-
 npm --version  
-
 ```  
   
 ## Create a GitHub Repository  
 
 Create a new public repository:  
 
-
 ```text  
-
 calculus  
-
 ```  
 
   
@@ -81,19 +60,14 @@ Using GitHub Desktop:
 
 
 ```text  
-
 File  
-
 → Clone Repository  
-
 ```  
 
 Clone it somewhere convenient, for example:  
 
 ```text  
-
 D:\Repositories\calculus  
-
 ```  
 
 ## Install Quartz  
@@ -101,62 +75,46 @@ D:\Repositories\calculus
 Open a terminal in the repository:  
 
 ```powershell  
-
 npm install  
-
 npx quartz create  
-
 ```  
 
 When prompted:  
 
 ```text  
-
 Choose how to initialize content:  
-
 ```  
 
 select:  
 
 ```text  
-
 Empty Quartz  
-
 ```  
 
 When asked for the site URL enter:  
 
 ```text  
-
 https://YOUR_USERNAME.github.io/REPOSITORY_NAME  
-
 ```  
 
 Example:  
 
 ```text  
-
 https://antsaaims.github.io/calculus  
-
 ```  
  
 ## Preview Locally  
  
 Run:  
- 
 
 ```powershell  
-
 npx quartz build --serve  
-
 ```  
  
 Open:  
 
 ```text  
-
 http://localhost:8080  
-
 ```  
 
 You should see your website.  
@@ -167,149 +125,80 @@ You should see your website.
 On GitHub:  
 
 ```text  
-
 Repository  
-
 → Settings  
-
 → Pages  
-
 ```  
 
 Set:  
 
 ```text  
-
 Source = GitHub Actions  
-
 ```  
 
 ## Add a GitHub Pages Workflow  
 
 Create:  
 
-
 ```text  
-
 .github/workflows/pages.yml  
-
 ```  
-
-  
 
 with:  
 
-  
-
 ```yaml  
-
 name: Deploy Quartz to GitHub Pages  
-
-  
-
 on:  
-
 push:  
-
 branches:  
-
 - v5  
-
-  
-
 permissions:  
-
 contents: read  
-
 pages: write  
-
 id-token: write  
-
-  
-
 concurrency:  
-
 group: pages  
-
 cancel-in-progress: true  
-
-  
-
 jobs:  
-
 build:  
-
 runs-on: ubuntu-latest  
-
-  
-
 steps:  
-
 - uses: actions/checkout@v4  
-
-  
-
 - uses: actions/setup-node@v4  
 
 with:  
 
 node-version: 24  
-
-  
-
 - run: npm install  
-
-  
-
 - run: npx quartz build  
-
-  
-
 - uses: actions/upload-pages-artifact@v3  
 
 with:  
-
 path: public  
-
-  
-
 deploy:  
 
 needs: build  
-
 runs-on: ubuntu-latest  
 
-  
 
 environment:  
-
 name: github-pages  
-
 url: ${{ steps.deployment.outputs.page_url }}  
 
   
 
 permissions:  
-
 pages: write  
-
 id-token: write  
 
-  
-
 steps:  
-
 - id: deployment  
-
 uses: actions/deploy-pages@v4  
-
 ```  
 
 Commit and push.  
 
-
 Once the workflow succeeds, the site will be live:  
-
 
 ```text  
 
@@ -318,7 +207,6 @@ https://YOUR_USERNAME.github.io/REPOSITORY_NAME
 ```  
 
 # Step 3: Install Git  
-
 
 Install Git for Windows:  
 https://git-scm.com/download/win  
@@ -369,9 +257,7 @@ This caused Canvas file cards to store paths like:
 ```  
 
   
-
 Quartz interpreted those paths incorrectly and generated broken links.  
-
 ## Correct Solution  
 
 Open:  
