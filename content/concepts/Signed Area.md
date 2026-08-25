@@ -18,5 +18,5 @@ $$
 Signed area is what tells you the actual **change** in a quantity — because a negative
 region means the quantity went *down* over that interval, not up.
 
-**Practice:** [Flashcards](../games/area-rate-of-change-flashcards.html) ·
-[Rate-of-Change Detective (game)](../games/area-rate-of-change-detective.html)
+**Practice:** [Flashcards](../games/area-rate-of-change-flashcards.htm) ·
+[Rate-of-Change Detective (game)](../games/area-rate-of-change-detective.htm)

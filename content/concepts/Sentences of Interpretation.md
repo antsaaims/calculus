@@ -27,5 +27,5 @@ understand. Every good interpretation sentence has four parts:
 **Point on the rate of change:** "At [input value + units + description],
 [description] was [increasing/decreasing] by [value] [units] per [input unit]."
 
-**Practice:** [Flashcards](../games/area-rate-of-change-flashcards.html) ·
-[Rate-of-Change Detective (game)](../games/area-rate-of-change-detective.html)
+**Practice:** [Flashcards](../games/area-rate-of-change-flashcards.htm) ·
+[Rate-of-Change Detective (game)](../games/area-rate-of-change-detective.htm)
