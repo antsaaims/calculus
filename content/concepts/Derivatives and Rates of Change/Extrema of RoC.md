@@ -17,3 +17,12 @@ Where $f$ reaches its own highest or lowest point, that's the moment $F$ is chan
 
 Compare this to [[x-Intercepts of RoC]], which is about a completely different feature
 of the same graph.
+
+**Math example:** if $f(x) = -(x-2)^2 + 4$ peaks at $x = 2$, that's the instant $F$ is
+changing fastest — an inflection point of $F$.
+
+**Real-world example:** a rocket's speed (its rate of change of altitude) peaks right
+at engine cutoff — the exact moment altitude is climbing fastest, even though the
+climb rate will now start dropping.
+
+**Further reading:** [Derivatives and the Shape of a Graph](https://math.libretexts.org/Bookshelves/Calculus/Calculus_(OpenStax)/04:_Applications_of_Derivatives/4.05:_Derivatives_and_the_Shape_of_a_Graph) (LibreTexts / OpenStax Calculus)

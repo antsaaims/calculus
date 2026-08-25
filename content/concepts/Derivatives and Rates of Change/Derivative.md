@@ -14,3 +14,10 @@ $$
 
 A [[Rate of change|rate of change]] function is just a derivative applied to a real-world
 quantity — same math, real-world meaning.
+
+**Math example:** if $f(x) = x^2$, then $f'(x) = 2x$, so the slope at $x = 3$ is $6$.
+
+**Real-world example:** a car's odometer reading is like $F$ (total distance); the
+speedometer reading at that instant is $F'$ (how fast distance is changing right now).
+
+**Further reading:** [Defining the Derivative](https://math.libretexts.org/Bookshelves/Calculus/Calculus_(OpenStax)/03:_Derivatives/3.01:_Defining_the_Derivative) (LibreTexts / OpenStax Calculus)

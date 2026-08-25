@@ -1,0 +1,309 @@
+{
+  "nodes": [
+    {
+      "id": "legend",
+      "type": "text",
+      "text": "# Calculus Concept Map\n\nRead **top to bottom**: Functions & Graphs (how to read a curve) → Derivatives & Rates of Change (how fast something changes) → Area & Accumulation (undoing a rate to find total change) → Interpretation (turning a result into a real sentence).\n\nArrows show how ideas connect; the label explains the relationship. Click any card to open the full note — each one has a math example and a real-world example.",
+      "x": 940,
+      "y": -510,
+      "width": 900,
+      "height": 260
+    },
+    {
+      "id": "group-functions",
+      "type": "group",
+      "label": "Functions & Graphs",
+      "color": "6",
+      "x": -80,
+      "y": -100,
+      "width": 2940,
+      "height": 2180
+    },
+    {
+      "id": "group-derivatives",
+      "type": "group",
+      "label": "Derivatives & Rates of Change",
+      "color": "4",
+      "x": -80,
+      "y": 2380,
+      "width": 2940,
+      "height": 2360
+    },
+    {
+      "id": "group-area",
+      "type": "group",
+      "label": "Area & Accumulation",
+      "color": "5",
+      "x": 640,
+      "y": 5040,
+      "width": 1500,
+      "height": 860
+    },
+    {
+      "id": "group-interpretation",
+      "type": "group",
+      "label": "Interpretation & Communication",
+      "color": "3",
+      "x": 1060,
+      "y": 6200,
+      "width": 660,
+      "height": 1030
+    },
+    {
+      "id": "function",
+      "type": "file",
+      "file": "concepts/Functions and Graphs/function.md",
+      "x": 0,
+      "y": 700,
+      "width": 380,
+      "height": 600,
+      "color": "6"
+    },
+    {
+      "id": "io",
+      "type": "file",
+      "file": "concepts/Functions and Graphs/Input and Output.md",
+      "x": 480,
+      "y": 700,
+      "width": 380,
+      "height": 600,
+      "color": "6"
+    },
+    {
+      "id": "graph",
+      "type": "file",
+      "file": "concepts/Functions and Graphs/Graph.md",
+      "x": 960,
+      "y": 700,
+      "width": 380,
+      "height": 600,
+      "color": "6"
+    },
+    {
+      "id": "signfn",
+      "type": "file",
+      "file": "concepts/Functions and Graphs/Sign of a Function.md",
+      "x": 1440,
+      "y": 0,
+      "width": 380,
+      "height": 600,
+      "color": "6"
+    },
+    {
+      "id": "readsign",
+      "type": "file",
+      "file": "concepts/Functions and Graphs/Reading Sign from a Graph.md",
+      "x": 1920,
+      "y": 0,
+      "width": 380,
+      "height": 600,
+      "color": "6"
+    },
+    {
+      "id": "incdec",
+      "type": "file",
+      "file": "concepts/Functions and Graphs/Increasing, Decreasing, or Constant.md",
+      "x": 1440,
+      "y": 700,
+      "width": 380,
+      "height": 600,
+      "color": "6"
+    },
+    {
+      "id": "recognize",
+      "type": "file",
+      "file": "concepts/Functions and Graphs/Recognizing a Max or Min.md",
+      "x": 1920,
+      "y": 700,
+      "width": 380,
+      "height": 600,
+      "color": "6"
+    },
+    {
+      "id": "minmax",
+      "type": "file",
+      "file": "concepts/Functions and Graphs/Min and Max.md",
+      "x": 2400,
+      "y": 700,
+      "width": 380,
+      "height": 600,
+      "color": "6"
+    },
+    {
+      "id": "concavity",
+      "type": "file",
+      "file": "concepts/Functions and Graphs/Concavity.md",
+      "x": 1440,
+      "y": 1400,
+      "width": 380,
+      "height": 600,
+      "color": "6"
+    },
+    {
+      "id": "derivative",
+      "type": "file",
+      "file": "concepts/Derivatives and Rates of Change/Derivative.md",
+      "x": 0,
+      "y": 3240,
+      "width": 380,
+      "height": 660,
+      "color": "4"
+    },
+    {
+      "id": "tangent",
+      "type": "file",
+      "file": "concepts/Derivatives and Rates of Change/Tangent.md",
+      "x": 480,
+      "y": 2480,
+      "width": 380,
+      "height": 660,
+      "color": "4"
+    },
+    {
+      "id": "roc",
+      "type": "file",
+      "file": "concepts/Derivatives and Rates of Change/Rate of change.md",
+      "x": 480,
+      "y": 3240,
+      "width": 380,
+      "height": 660,
+      "color": "4"
+    },
+    {
+      "id": "qf",
+      "type": "file",
+      "file": "concepts/Derivatives and Rates of Change/Quantity Function F(x).md",
+      "x": 960,
+      "y": 3240,
+      "width": 380,
+      "height": 660,
+      "color": "4"
+    },
+    {
+      "id": "funits",
+      "type": "file",
+      "file": "concepts/Derivatives and Rates of Change/Function Units.md",
+      "x": 1440,
+      "y": 2480,
+      "width": 380,
+      "height": 660,
+      "color": "4"
+    },
+    {
+      "id": "signroc",
+      "type": "file",
+      "file": "concepts/Derivatives and Rates of Change/Sign of RoC.md",
+      "x": 1440,
+      "y": 3240,
+      "width": 380,
+      "height": 660,
+      "color": "4"
+    },
+    {
+      "id": "startval",
+      "type": "file",
+      "file": "concepts/Derivatives and Rates of Change/Starting Value.md",
+      "x": 1440,
+      "y": 4000,
+      "width": 380,
+      "height": 660,
+      "color": "4"
+    },
+    {
+      "id": "extremaroc",
+      "type": "file",
+      "file": "concepts/Derivatives and Rates of Change/Extrema of RoC.md",
+      "x": 1920,
+      "y": 3240,
+      "width": 380,
+      "height": 660,
+      "color": "4"
+    },
+    {
+      "id": "xintroc",
+      "type": "file",
+      "file": "concepts/Derivatives and Rates of Change/x-Intercepts of RoC.md",
+      "x": 2400,
+      "y": 3240,
+      "width": 380,
+      "height": 660,
+      "color": "4"
+    },
+    {
+      "id": "signedarea",
+      "type": "file",
+      "file": "concepts/Area and Accumulation/Signed Area.md",
+      "x": 720,
+      "y": 5140,
+      "width": 380,
+      "height": 680,
+      "color": "5"
+    },
+    {
+      "id": "unsignedarea",
+      "type": "file",
+      "file": "concepts/Area and Accumulation/Unsigned Area.md",
+      "x": 1200,
+      "y": 5140,
+      "width": 380,
+      "height": 680,
+      "color": "5"
+    },
+    {
+      "id": "areaunits",
+      "type": "file",
+      "file": "concepts/Area and Accumulation/Area Units.md",
+      "x": 1680,
+      "y": 5140,
+      "width": 380,
+      "height": 680,
+      "color": "5"
+    },
+    {
+      "id": "sentences",
+      "type": "file",
+      "file": "concepts/Interpretation/Sentences of Interpretation.md",
+      "x": 1140,
+      "y": 6300,
+      "width": 500,
+      "height": 850,
+      "color": "3"
+    }
+  ],
+  "edges": [
+    { "id": "e1", "fromNode": "function", "fromSide": "right", "toNode": "io", "toSide": "left", "label": "has an" },
+    { "id": "e2", "fromNode": "io", "fromSide": "right", "toNode": "graph", "toSide": "left", "label": "plotted as a" },
+    { "id": "e3", "fromNode": "graph", "fromSide": "top", "toNode": "signfn", "toSide": "bottom", "label": "shows its" },
+    { "id": "e4", "fromNode": "signfn", "fromSide": "right", "toNode": "readsign", "toSide": "left", "label": "read via" },
+    { "id": "e5", "fromNode": "graph", "fromSide": "right", "toNode": "incdec", "toSide": "left", "label": "shows whether" },
+    { "id": "e6", "fromNode": "incdec", "fromSide": "right", "toNode": "recognize", "toSide": "left", "label": "pattern reveals" },
+    { "id": "e7", "fromNode": "recognize", "fromSide": "right", "toNode": "minmax", "toSide": "left", "label": "identifies a" },
+    { "id": "e8", "fromNode": "graph", "fromSide": "bottom", "toNode": "concavity", "toSide": "top", "label": "also shows its" },
+
+    { "id": "e9", "fromNode": "derivative", "fromSide": "top", "toNode": "tangent", "toSide": "bottom", "label": "is the slope of" },
+    { "id": "e10", "fromNode": "derivative", "fromSide": "right", "toNode": "roc", "toSide": "left", "label": "applied to a real quantity, is a.." },
+    { "id": "e11", "fromNode": "roc", "fromSide": "right", "toNode": "qf", "toSide": "left", "label": "is the derivative of" },
+    { "id": "e12", "fromNode": "qf", "fromSide": "top", "toNode": "funits", "toSide": "bottom", "label": "also has a" },
+    { "id": "e13", "fromNode": "roc", "fromSide": "top", "toNode": "funits", "toSide": "bottom", "label": "also has a" },
+    { "id": "e14", "fromNode": "roc", "fromSide": "right", "toNode": "signroc", "toSide": "left", "label": "its sign shows" },
+    { "id": "e15", "fromNode": "signroc", "fromSide": "right", "toNode": "extremaroc", "toSide": "left", "label": "vs. (peaks)" },
+    { "id": "e16", "fromNode": "extremaroc", "fromSide": "right", "toNode": "xintroc", "toSide": "left", "label": "vs. (zeros)" },
+    { "id": "e17", "fromNode": "qf", "fromSide": "bottom", "toNode": "startval", "toSide": "top", "label": "needs a" },
+    { "id": "e18", "fromNode": "roc", "fromSide": "bottom", "toNode": "startval", "toSide": "top", "label": "plus this, gives F's value" },
+
+    { "id": "e19", "fromNode": "signedarea", "fromSide": "right", "toNode": "unsignedarea", "toSide": "left", "label": "vs. — same picture, different question" },
+    { "id": "e20", "fromNode": "signedarea", "fromSide": "top", "toNode": "areaunits", "toSide": "top", "label": "shares its units with" },
+
+    { "id": "e21", "fromNode": "roc", "fromSide": "bottom", "toNode": "signedarea", "toSide": "top", "label": "has" },
+    { "id": "e22", "fromNode": "roc", "fromSide": "bottom", "toNode": "unsignedarea", "toSide": "top", "label": "has" },
+    { "id": "e23", "fromNode": "roc", "fromSide": "bottom", "toNode": "areaunits", "toSide": "top", "label": "is measured in" },
+    { "id": "e24", "fromNode": "qf", "fromSide": "bottom", "toNode": "sentences", "toSide": "top", "label": "written as a" },
+    { "id": "e25", "fromNode": "roc", "fromSide": "bottom", "toNode": "sentences", "toSide": "top", "label": "put into words with" },
+    { "id": "e26", "fromNode": "signedarea", "fromSide": "bottom", "toNode": "sentences", "toSide": "top", "label": "change over interval, written as a" },
+    { "id": "e27", "fromNode": "startval", "fromSide": "bottom", "toNode": "sentences", "toSide": "top", "label": "written as a" },
+
+    { "id": "e28", "fromNode": "tangent", "fromSide": "top", "toNode": "graph", "toSide": "bottom", "label": "is an example of a" },
+    { "id": "e29", "fromNode": "concavity", "fromSide": "bottom", "toNode": "extremaroc", "toSide": "top", "label": "switches at an" },
+    { "id": "e30", "fromNode": "xintroc", "fromSide": "top", "toNode": "minmax", "toSide": "bottom", "label": "locates a relative" }
+  ]
+}

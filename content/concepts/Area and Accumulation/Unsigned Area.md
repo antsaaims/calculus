@@ -17,3 +17,12 @@ $$
 
 Total area answers *"how much stuff happened,"* while [[Signed Area]] answers *"what was
 the net change."* Same picture, two different questions.
+
+**Math example:** with the same regions as before (area $10$ above, area $4$ below),
+total area is $10 + 4 = 14$ — not $6$.
+
+**Real-world example:** that hiker's total *distance climbed and descended* (every step
+counted positively) is unsigned area — different from the net elevation change, which is
+[[Signed Area]].
+
+**Further reading:** [Riemann Sums](https://math.libretexts.org/Bookshelves/Calculus/Book:_Active_Calculus_(Boelkins_et_al.)/04:_The_Definite_Integral/4.02:_Riemann_Sums) (LibreTexts)

@@ -27,5 +27,14 @@ understand. Every good interpretation sentence has four parts:
 **Point on the rate of change:** "At [input value + units + description],
 [description] was [increasing/decreasing] by [value] [units] per [input unit]."
 
-**Practice:** [Flashcards](../games/area-rate-of-change-flashcards.htm) ·
-[Rate-of-Change Detective (game)](../games/area-rate-of-change-detective.htm)
+**Math example:** suppose $F(x)$ is gallons of water in a tank after $x$ minutes, and
+$F(4) = 30$.
+
+**Real-world example, filled in:** "At 4 minutes, the tank had 30 gallons of water."
+That's the "point on the quantity function" template with **When** = 4 minutes,
+**What** = the tank, **How** = "had," **How much** = 30 gallons.
+
+**Practice:** [Flashcards](../../games/area-rate-of-change-flashcards.htm) ·
+[Rate-of-Change Detective (game)](../../games/area-rate-of-change-detective.htm)
+
+**Further reading:** [Derivatives as Rates of Change](https://math.libretexts.org/Bookshelves/Calculus/Calculus_(OpenStax)/03:_Derivatives/3.04:_Derivatives_as_Rates_of_Change) (LibreTexts / OpenStax Calculus)
