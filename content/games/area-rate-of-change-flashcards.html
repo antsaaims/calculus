@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcards — Area &amp; Rate of Change</title>
+<style>
+  :root{
+    --blue:#1b4f8c; --blue-dark:#84b4e8;
+    --green:#4f7a2a; --green-dark:#9ccb5a;
+    --red:#b3382c; --red-dark:#e07a70;
+    --bg:#faf8f8; --card:#ffffff; --ink:#2b2b2b; --muted:#6b6b6b; --line:#e5e5e5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#161618; --card:#1f1f22; --ink:#ebebec; --muted:#a9a9ad; --line:#393639;
+           --blue:var(--blue-dark); --green:var(--green-dark); --red:var(--red-dark); }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family: "Source Sans Pro", system-ui, sans-serif;
+    background:var(--bg); color:var(--ink); padding:1.5rem;
+    display:flex; flex-direction:column; align-items:center; gap:1rem;
+  }
+  h1{font-size:1.15rem; font-weight:700; margin:0 0 .25rem;}
+  .tabs{display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center;}
+  .tab{
+    border:2px solid var(--line); background:var(--card); color:var(--ink);
+    padding:.5rem .9rem; border-radius:999px; font-size:.9rem; cursor:pointer;
+  }
+  .tab[aria-pressed="true"]{border-color:var(--blue); font-weight:700;}
+  .tab .badge{font-size:.75rem; color:var(--muted); margin-left:.35rem;}
+  .status{font-size:.85rem; color:var(--muted);}
+  .stage{font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:var(--blue);}
+  .card-wrap{width:min(560px, 92vw); perspective:1200px;}
+  .card{
+    position:relative; width:100%; min-height:220px; border-radius:16px;
+    background:var(--card); border:1px solid var(--line);
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    cursor:pointer; padding:1.5rem; display:flex; align-items:center; justify-content:center;
+    text-align:center; font-size:1.1rem; line-height:1.5;
+  }
+  .card:focus-visible{outline:3px solid var(--blue); outline-offset:3px;}
+  .face-label{
+    position:absolute; top:.75rem; left:.9rem; font-size:.7rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:.05em; color:var(--muted);
+  }
+  .answer{color:var(--green);}
+  .controls{display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center;}
+  button.action{
+    border:none; border-radius:10px; padding:.6rem 1rem; font-size:.9rem; cursor:pointer;
+    background:var(--blue); color:#fff; font-weight:600;
+  }
+  button.action.secondary{background:transparent; color:var(--blue); border:2px solid var(--blue);}
+  button.action:focus-visible{outline:3px solid var(--red); outline-offset:2px;}
+  .hint{font-size:.8rem; color:var(--muted);}
+</style>
+</head>
+<body>
+  <h1>Area &amp; Rate of Change — Flashcards</h1>
+  <div class="tabs" role="tablist" aria-label="Difficulty pass">
+    <button class="tab" id="tab-recall" role="tab" aria-pressed="true">① Recall <span class="badge">definitions</span></button>
+    <button class="tab" id="tab-reason" role="tab" aria-pressed="false">② Reason <span class="badge">graphs &amp; sentences</span></button>
+  </div>
+  <div class="stage" id="stage-label">Pass 1: Recall</div>
+  <div class="status" id="status">Card 1 of 8</div>
+
+  <div class="card-wrap">
+    <div class="card" id="card" tabindex="0" role="button" aria-label="Flashcard, press Enter or click to flip">
+      <span class="face-label" id="face-label">Question</span>
+      <div id="card-text">Loading…</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="action secondary" id="prev">◂ Previous</button>
+    <button class="action" id="flip">Flip card</button>
+    <button class="action secondary" id="next">Next ▸</button>
+  </div>
+  <div class="controls">
+    <button class="action secondary" id="shuffle">Shuffle this pass</button>
+  </div>
+  <p class="hint">Tip: click the card, or focus it and press Enter/Space, to flip between question and answer.</p>
+
+<script>
+  const recall = [
+    ["Area above the x-axis counts as ___. Area below counts as ___.", "Positive above, negative below — that's what makes it \"signed\" area."],
+    ["What do you call area that ignores sign and adds every region as positive?", "Unsigned area (also called total area)."],
+    ["f is velocity in mph, x is time in hours. What are the units of the area under f?", "Miles — (mph)·(hours) = miles."],
+    ["If f(x) > 0 on an interval, is the quantity function F increasing or decreasing there?", "Increasing."],
+    ["If f(x) < 0 on an interval, is F increasing or decreasing there?", "Decreasing."],
+    ["Where f(x) = 0, what feature does F have there?", "A relative maximum or minimum."],
+    ["Where the RoC graph f has its OWN max or min (not crossing zero), what does F have there?", "An inflection point — F is changing as fast as it ever will."],
+    ["Besides the RoC graph, what extra piece of information do you need to know F's actual value?", "A starting value, F(a) — the RoC graph alone only tells you about change."]
+  ];
+
+  const reason = [
+    ["f crosses from positive to negative at x = 3. What happens to F at x = 3?", "F has a relative MAXIMUM at x = 3 (F was increasing, then starts decreasing)."],
+    ["f crosses from negative to positive at x = 5. What happens to F at x = 5?", "F has a relative MINIMUM at x = 5."],
+    ["f has a local max at x = 2 (its graph peaks there, without crossing zero). What's special about F at x = 2?", "F has an inflection point at x = 2 — that's the moment F is increasing fastest."],
+    ["The signed area under f from x = 1 to x = 4 is −12. What does that tell you about F?", "F decreased by 12 units from x = 1 to x = 4."],
+    ["Fill in the sentence template: \"From a to b, [description] ___ by [value] [units].\"", "increased / decreased — pick whichever matches the sign of the signed area."],
+    ["A company's marginal cost is positive over [10, 20] (units produced), with signed area $450. Write a sentence of interpretation.", "\"From 10 to 20 units produced, total cost increased by $450.\""],
+    ["True or False: unsigned area and signed area are always equal.", "False — they're only equal when the whole region is on one side of the axis."],
+    ["A rate-of-change graph is entirely below the x-axis on [0, 6]. How do the total area and the signed area compare?", "Same size, opposite sign: total area is positive, signed area is negative."]
+  ];
+
+  const decks = { recall, reason };
+  let mode = "recall";
+  let order = recall.map((_, i) => i);
+  let idx = 0;
+  let showingAnswer = false;
+
+  const cardEl = document.getElementById("card");
+  const textEl = document.getElementById("card-text");
+  const faceLabel = document.getElementById("face-label");
+  const statusEl = document.getElementById("status");
+  const stageLabel = document.getElementById("stage-label");
+  const tabRecall = document.getElementById("tab-recall");
+  const tabReason = document.getElementById("tab-reason");
+
+  function render(){
+    const deck = decks[mode];
+    const realIdx = order[idx];
+    const [q, a] = deck[realIdx];
+    textEl.textContent = showingAnswer ? a : q;
+    textEl.className = showingAnswer ? "answer" : "";
+    faceLabel.textContent = showingAnswer ? "Answer" : "Question";
+    statusEl.textContent = `Card ${idx + 1} of ${deck.length}`;
+  }
+
+  function flip(){ showingAnswer = !showingAnswer; render(); }
+  function go(delta){
+    const deck = decks[mode];
+    idx = (idx + delta + deck.length) % deck.length;
+    showingAnswer = false;
+    render();
+  }
+  function shuffle(){
+    for (let i = order.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+    idx = 0; showingAnswer = false; render();
+  }
+  function setMode(newMode){
+    mode = newMode;
+    order = decks[mode].map((_, i) => i);
+    idx = 0; showingAnswer = false;
+    tabRecall.setAttribute("aria-pressed", String(mode === "recall"));
+    tabReason.setAttribute("aria-pressed", String(mode === "reason"));
+    stageLabel.textContent = mode === "recall" ? "Pass 1: Recall" : "Pass 2: Reason";
+    render();
+  }
+
+  cardEl.addEventListener("click", flip);
+  cardEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " "){ e.preventDefault(); flip(); }
+  });
+  document.getElementById("flip").addEventListener("click", flip);
+  document.getElementById("prev").addEventListener("click", () => go(-1));
+  document.getElementById("next").addEventListener("click", () => go(1));
+  document.getElementById("shuffle").addEventListener("click", shuffle);
+  tabRecall.addEventListener("click", () => setMode("recall"));
+  tabReason.addEventListener("click", () => setMode("reason"));
+
+  setMode("recall");
+</script>
+</body>
+</html>

@@ -1,13 +1,13 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: Calculus with Antsa Pierrottet
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: antsaaims.githum.io/calculus
+  baseUrl: antsaaims.github.io/calculus
   ignorePatterns:
     - private
     - templates
@@ -19,6 +19,10 @@ configuration:
       header: Schibsted Grotesk
       body: Source Sans Pro
       code: IBM Plex Mono
+    # Palette derived from Antsa's study-guide branding (61.tex): blue = positive/
+    # above-axis, apple green = highlight/key term, red = negative/below-axis.
+    # All pairs checked against WCAG AA contrast (>=4.5:1) on their backgrounds.
+    # TODO(Antsa): swap these for exact hex codes if you have official brand colors.
     colors:
       lightMode:
         light: "#faf8f8"
@@ -26,20 +30,20 @@ configuration:
         gray: "#b8b8b8"
         darkgray: "#4e4e4e"
         dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        secondary: "#1b4f8c" # blue, from your positive/above-axis diagrams
+        tertiary: "#4f7a2a" # apple green, from your highlight color
+        highlight: rgba(27, 79, 140, 0.1)
+        textHighlight: "rgba(214, 69, 59, 0.25)" # soft red wash, from your negative/below-axis color
       darkMode:
         light: "#161618"
         lightgray: "#393639"
         gray: "#646464"
         darkgray: "#d4d4d4"
         dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        secondary: "#84b4e8" # blue, brightened for dark backgrounds
+        tertiary: "#9ccb5a" # apple green, brightened for dark backgrounds
+        highlight: rgba(132, 180, 232, 0.1)
+        textHighlight: "rgba(224, 122, 112, 0.35)" # soft red wash, brightened for dark backgrounds
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -220,8 +224,11 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        # TODO(Antsa): replace with your real contact/office-hours link before syncing —
+        # this is a placeholder so the footer isn't broken if you sync before editing it.
+        Contact / Office Hours: "mailto:REPLACE-WITH-YOUR-EMAIL@institution.edu"
+        SubStack newsletter: http://antsahoneywinner.substack.com/
+        Visit my main website: https://www.antsaeducontent.com
     layout:
       position: footer
       priority: 50

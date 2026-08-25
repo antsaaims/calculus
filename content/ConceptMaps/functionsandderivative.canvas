@@ -1,41 +1,281 @@
 {
-	"nodes":[
-		{"id":"ef2d2d056b2117a3","type":"group","x":-540,"y":-840,"width":780,"height":1140},
-		{"id":"c8b90e8e27fd5b22","type":"text","text":"Functions","x":-740,"y":-400,"width":120,"height":60,"color":"3"},
-		{"id":"c48d93dd6e6f283c","type":"text","text":"Quantity function $F(x)$","x":-745,"y":400,"width":185,"height":60,"color":"3"},
-		{"id":"60b4dfd327b91aca","type":"text","text":"Derivative","x":-290,"y":200,"width":250,"height":60},
-		{"id":"abda727d43680ee1","type":"text","text":"Tangent","x":-520,"y":-115,"width":205,"height":60},
-		{"id":"3c3f96c5785b7914","type":"text","text":"Graph","x":-405,"y":-430,"width":180,"height":60},
-		{"id":"7972115f54d57e88","type":"text","text":"Input/output","x":-440,"y":-620,"width":250,"height":60},
-		{"id":"4e1e401590dc187b","type":"text","text":"unit","x":-470,"y":680,"width":105,"height":50,"color":"5"},
-		{"id":"50061937165474cc","type":"text","text":"concave up $\\cup$ / concave down $\\cap$","x":-115,"y":-55,"width":250,"height":60},
-		{"id":"f1cdbffd0ba028e1","type":"text","text":"[[Rate of change]]","x":280,"y":680,"width":160,"height":60},
-		{"id":"91756127ce9089e4","type":"text","text":"Sign (+/-/0)","x":-115,"y":-360,"width":250,"height":60},
-		{"id":"8ed4fc1ae953e26c","type":"text","text":"Positive/$>0$ : above the $x$-axis,\nNegative/$<$ : below the $x$-axis,","x":480,"y":-500,"width":250,"height":140,"color":"6"},
-		{"id":"5cf5433237334f4a","type":"text","text":"Max: increase then decrease\nMin: decrease then increase","x":605,"y":-175,"width":250,"height":90,"color":"6"},
-		{"id":"2433d12037774685","type":"text","text":"increase/decrease/constant","x":-115,"y":-260,"width":250,"height":60},
-		{"id":"9a7ccf89c7d7754e","type":"text","text":"Min/Max","x":-115,"y":-145,"width":250,"height":60},
-		{"id":"b0c29de9b124fbf6","x":639,"y":664,"width":400,"height":400,"type":"file","file":"concepts/Rate of change.md"},
-		{"id":"a92e8814ef063153","x":-1145,"y":5,"width":400,"height":400,"type":"file","file":"concepts/function.md"}
+	"nodes": [
+		{
+			"id": "ef2d2d056b2117a3",
+			"type": "group",
+			"x": -620,
+			"y": -450,
+			"width": 1140,
+			"height": 870
+		},
+		{
+			"id": "c8b90e8e27fd5b22",
+			"type": "file",
+			"file": "concepts/function.md",
+			"x": -150,
+			"y": -380,
+			"width": 300,
+			"height": 170,
+			"color": "3"
+		},
+		{
+			"id": "c48d93dd6e6f283c",
+			"type": "file",
+			"file": "concepts/Quantity Function F(x).md",
+			"x": -550,
+			"y": -100,
+			"width": 300,
+			"height": 170,
+			"color": "3"
+		},
+		{
+			"id": "60b4dfd327b91aca",
+			"type": "file",
+			"file": "concepts/Derivative.md",
+			"x": 150,
+			"y": -380,
+			"width": 300,
+			"height": 170
+		},
+		{
+			"id": "abda727d43680ee1",
+			"type": "file",
+			"file": "concepts/Tangent.md",
+			"x": 150,
+			"y": -680,
+			"width": 300,
+			"height": 170
+		},
+		{
+			"id": "3c3f96c5785b7914",
+			"type": "file",
+			"file": "concepts/Graph.md",
+			"x": 550,
+			"y": -680,
+			"width": 300,
+			"height": 170
+		},
+		{
+			"id": "7972115f54d57e88",
+			"type": "file",
+			"file": "concepts/Input and Output.md",
+			"x": 550,
+			"y": -980,
+			"width": 300,
+			"height": 170
+		},
+		{
+			"id": "4e1e401590dc187b",
+			"type": "file",
+			"file": "concepts/Function Units.md",
+			"x": -350,
+			"y": 180,
+			"width": 300,
+			"height": 170,
+			"color": "5"
+		},
+		{
+			"id": "50061937165474cc",
+			"type": "file",
+			"file": "concepts/Concavity.md",
+			"x": 950,
+			"y": 150,
+			"width": 300,
+			"height": 170
+		},
+		{
+			"id": "f1cdbffd0ba028e1",
+			"type": "file",
+			"file": "concepts/Rate of change.md",
+			"x": -150,
+			"y": -100,
+			"width": 300,
+			"height": 170
+		},
+		{
+			"id": "91756127ce9089e4",
+			"type": "file",
+			"file": "concepts/Sign of a Function.md",
+			"x": 850,
+			"y": -500,
+			"width": 300,
+			"height": 170
+		},
+		{
+			"id": "8ed4fc1ae953e26c",
+			"type": "file",
+			"file": "concepts/Reading Sign from a Graph.md",
+			"x": 1150,
+			"y": -500,
+			"width": 300,
+			"height": 170,
+			"color": "6"
+		},
+		{
+			"id": "5cf5433237334f4a",
+			"type": "file",
+			"file": "concepts/Recognizing a Max or Min.md",
+			"x": 150,
+			"y": 750,
+			"width": 300,
+			"height": 170,
+			"color": "6"
+		},
+		{
+			"id": "2433d12037774685",
+			"type": "file",
+			"file": "concepts/Increasing, Decreasing, or Constant.md",
+			"x": -300,
+			"y": 750,
+			"width": 300,
+			"height": 170
+		},
+		{
+			"id": "9a7ccf89c7d7754e",
+			"type": "file",
+			"file": "concepts/Min and Max.md",
+			"x": 600,
+			"y": 750,
+			"width": 300,
+			"height": 170
+		}
 	],
-	"edges":[
-		{"id":"e3fdfee07bc52885","fromNode":"c8b90e8e27fd5b22","fromSide":"top","toNode":"ef2d2d056b2117a3","toSide":"top","label":"always has these"},
-		{"id":"de9ca23faf11d98f","fromNode":"60b4dfd327b91aca","fromSide":"left","toNode":"c8b90e8e27fd5b22","toSide":"bottom","label":"is another"},
-		{"id":"09c098369c6c2720","fromNode":"c48d93dd6e6f283c","fromSide":"top","toNode":"c8b90e8e27fd5b22","toSide":"left","label":"an example of "},
-		{"id":"6f94892ff87df9fe","fromNode":"f1cdbffd0ba028e1","fromSide":"top","toNode":"60b4dfd327b91aca","toSide":"bottom","label":"is a.."},
-		{"id":"ed3ddd669e9e4b56","fromNode":"f1cdbffd0ba028e1","fromSide":"left","toNode":"c48d93dd6e6f283c","toSide":"right","label":"the derivative of "},
-		{"id":"5e74c78716035138","fromNode":"f1cdbffd0ba028e1","fromSide":"left","toNode":"4e1e401590dc187b","toSide":"right","label":"also has a"},
-		{"id":"2481c70648912d4b","fromNode":"c48d93dd6e6f283c","fromSide":"bottom","toNode":"4e1e401590dc187b","toSide":"left","label":"also has a "},
-		{"id":"e32329834dee64b4","fromNode":"3c3f96c5785b7914","fromSide":"top","toNode":"7972115f54d57e88","toSide":"bottom","label":"the set of all"},
-		{"id":"d359dec69725467f","fromNode":"3c3f96c5785b7914","fromSide":"right","toNode":"8ed4fc1ae953e26c","toSide":"left"},
-		{"id":"8d7fca3b828ff6a9","fromNode":"8ed4fc1ae953e26c","fromSide":"left","toNode":"3c3f96c5785b7914","toSide":"right"},
-		{"id":"3356022fbf7bd634","fromNode":"91756127ce9089e4","fromSide":"right","toNode":"8ed4fc1ae953e26c","toSide":"left"},
-		{"id":"648c3b79dd494a66","fromNode":"8ed4fc1ae953e26c","fromSide":"left","toNode":"91756127ce9089e4","toSide":"right"},
-		{"id":"d584a754bc4e7be3","fromNode":"2433d12037774685","fromSide":"right","toNode":"5cf5433237334f4a","toSide":"left"},
-		{"id":"37db6648af60930e","fromNode":"5cf5433237334f4a","fromSide":"left","toNode":"2433d12037774685","toSide":"right"},
-		{"id":"a15f20636a091130","fromNode":"9a7ccf89c7d7754e","fromSide":"right","toNode":"5cf5433237334f4a","toSide":"left"},
-		{"id":"d19220bbbfbdabd7","fromNode":"5cf5433237334f4a","fromSide":"left","toNode":"9a7ccf89c7d7754e","toSide":"right"},
-		{"id":"9ae3c910a7de713b","fromNode":"abda727d43680ee1","fromSide":"top","toNode":"3c3f96c5785b7914","toSide":"left","label":"is an example of "},
-		{"id":"f523a299cf621a75","fromNode":"60b4dfd327b91aca","fromSide":"top","toNode":"abda727d43680ee1","toSide":"bottom","label":"gives the slope of"}
+	"edges": [
+		{
+			"id": "e3fdfee07bc52885",
+			"fromNode": "c8b90e8e27fd5b22",
+			"fromSide": "top",
+			"toNode": "ef2d2d056b2117a3",
+			"toSide": "top",
+			"label": "always has these"
+		},
+		{
+			"id": "de9ca23faf11d98f",
+			"fromNode": "60b4dfd327b91aca",
+			"fromSide": "left",
+			"toNode": "c8b90e8e27fd5b22",
+			"toSide": "bottom",
+			"label": "is another"
+		},
+		{
+			"id": "09c098369c6c2720",
+			"fromNode": "c48d93dd6e6f283c",
+			"fromSide": "top",
+			"toNode": "c8b90e8e27fd5b22",
+			"toSide": "left",
+			"label": "an example of "
+		},
+		{
+			"id": "6f94892ff87df9fe",
+			"fromNode": "f1cdbffd0ba028e1",
+			"fromSide": "top",
+			"toNode": "60b4dfd327b91aca",
+			"toSide": "bottom",
+			"label": "is a.."
+		},
+		{
+			"id": "ed3ddd669e9e4b56",
+			"fromNode": "f1cdbffd0ba028e1",
+			"fromSide": "left",
+			"toNode": "c48d93dd6e6f283c",
+			"toSide": "right",
+			"label": "the derivative of "
+		},
+		{
+			"id": "5e74c78716035138",
+			"fromNode": "f1cdbffd0ba028e1",
+			"fromSide": "left",
+			"toNode": "4e1e401590dc187b",
+			"toSide": "right",
+			"label": "also has a"
+		},
+		{
+			"id": "2481c70648912d4b",
+			"fromNode": "c48d93dd6e6f283c",
+			"fromSide": "bottom",
+			"toNode": "4e1e401590dc187b",
+			"toSide": "left",
+			"label": "also has a "
+		},
+		{
+			"id": "e32329834dee64b4",
+			"fromNode": "3c3f96c5785b7914",
+			"fromSide": "top",
+			"toNode": "7972115f54d57e88",
+			"toSide": "bottom",
+			"label": "the set of all"
+		},
+		{
+			"id": "d359dec69725467f",
+			"fromNode": "3c3f96c5785b7914",
+			"fromSide": "right",
+			"toNode": "8ed4fc1ae953e26c",
+			"toSide": "left"
+		},
+		{
+			"id": "8d7fca3b828ff6a9",
+			"fromNode": "8ed4fc1ae953e26c",
+			"fromSide": "left",
+			"toNode": "3c3f96c5785b7914",
+			"toSide": "right"
+		},
+		{
+			"id": "3356022fbf7bd634",
+			"fromNode": "91756127ce9089e4",
+			"fromSide": "right",
+			"toNode": "8ed4fc1ae953e26c",
+			"toSide": "left"
+		},
+		{
+			"id": "648c3b79dd494a66",
+			"fromNode": "8ed4fc1ae953e26c",
+			"fromSide": "left",
+			"toNode": "91756127ce9089e4",
+			"toSide": "right"
+		},
+		{
+			"id": "d584a754bc4e7be3",
+			"fromNode": "2433d12037774685",
+			"fromSide": "right",
+			"toNode": "5cf5433237334f4a",
+			"toSide": "left"
+		},
+		{
+			"id": "37db6648af60930e",
+			"fromNode": "5cf5433237334f4a",
+			"fromSide": "left",
+			"toNode": "2433d12037774685",
+			"toSide": "right"
+		},
+		{
+			"id": "a15f20636a091130",
+			"fromNode": "9a7ccf89c7d7754e",
+			"fromSide": "right",
+			"toNode": "5cf5433237334f4a",
+			"toSide": "left"
+		},
+		{
+			"id": "d19220bbbfbdabd7",
+			"fromNode": "5cf5433237334f4a",
+			"fromSide": "left",
+			"toNode": "9a7ccf89c7d7754e",
+			"toSide": "right"
+		},
+		{
+			"id": "9ae3c910a7de713b",
+			"fromNode": "abda727d43680ee1",
+			"fromSide": "top",
+			"toNode": "3c3f96c5785b7914",
+			"toSide": "left",
+			"label": "is an example of "
+		},
+		{
+			"id": "f523a299cf621a75",
+			"fromNode": "60b4dfd327b91aca",
+			"fromSide": "top",
+			"toNode": "abda727d43680ee1",
+			"toSide": "bottom",
+			"label": "gives the slope of"
+		}
 	]
 }

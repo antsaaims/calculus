@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rate-of-Change Detective</title>
+<style>
+  :root{
+    --blue:#1b4f8c; --blue-dark:#84b4e8;
+    --green:#4f7a2a; --green-dark:#9ccb5a;
+    --red:#b3382c; --red-dark:#e07a70;
+    --bg:#faf8f8; --card:#ffffff; --ink:#2b2b2b; --muted:#6b6b6b; --line:#e5e5e5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#161618; --card:#1f1f22; --ink:#ebebec; --muted:#a9a9ad; --line:#393639;
+           --blue:var(--blue-dark); --green:var(--green-dark); --red:var(--red-dark); }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:"Source Sans Pro", system-ui, sans-serif;
+    background:var(--bg); color:var(--ink); padding:1.5rem;
+    display:flex; flex-direction:column; align-items:center; gap:1rem;
+  }
+  h1{font-size:1.15rem; margin:0;}
+  .status{font-size:.85rem; color:var(--muted); display:flex; gap:1rem;}
+  .panel{
+    width:min(560px, 94vw); background:var(--card); border:1px solid var(--line);
+    border-radius:16px; padding:1.25rem; box-shadow:0 2px 10px rgba(0,0,0,.08);
+  }
+  .graphbox{display:flex; justify-content:center; margin-bottom:.75rem;}
+  svg{max-width:100%; height:auto;}
+  .prompt{font-size:1.02rem; margin:.25rem 0 .9rem; text-align:center;}
+  .choices{display:flex; flex-direction:column; gap:.55rem;}
+  button.choice{
+    text-align:left; border:2px solid var(--line); background:transparent; color:var(--ink);
+    border-radius:10px; padding:.65rem .8rem; font-size:.95rem; cursor:pointer;
+  }
+  button.choice:hover{border-color:var(--blue);}
+  button.choice:focus-visible{outline:3px solid var(--blue); outline-offset:2px;}
+  button.choice.correct{border-color:var(--green); background:color-mix(in srgb, var(--green) 12%, transparent); font-weight:700;}
+  button.choice.incorrect{border-color:var(--red); background:color-mix(in srgb, var(--red) 12%, transparent);}
+  button.choice .mark{font-weight:800; margin-right:.4rem;}
+  .feedback{font-size:.9rem; margin-top:.8rem; padding:.7rem .85rem; border-radius:10px; border:1px solid var(--line); display:none;}
+  .feedback.show{display:block;}
+  .controls{display:flex; justify-content:space-between; gap:.6rem; margin-top:1rem;}
+  button.action{
+    border:none; border-radius:10px; padding:.6rem 1rem; font-size:.9rem; cursor:pointer;
+    background:var(--blue); color:#fff; font-weight:600;
+  }
+  button.action:disabled{opacity:.45; cursor:not-allowed;}
+  button.action.secondary{background:transparent; color:var(--blue); border:2px solid var(--blue);}
+</style>
+</head>
+<body>
+  <h1>🔎 Rate-of-Change Detective</h1>
+  <div class="status">
+    <span id="round-label">Round 1 of 8</span>
+    <span id="score-label">Score: 0</span>
+  </div>
+
+  <div class="panel">
+    <div class="graphbox" id="graph"></div>
+    <p class="prompt" id="prompt"></p>
+    <div class="choices" id="choices"></div>
+    <div class="feedback" id="feedback"></div>
+    <div class="controls">
+      <button class="action secondary" id="restart">Restart</button>
+      <button class="action" id="next" disabled>Next round ▸</button>
+    </div>
+  </div>
+
+<script>
+const NS = "http://www.w3.org/2000/svg";
+
+function axisSvg(children, viewBox="0 0 220 140"){
+  return `<svg viewBox="${viewBox}" role="img" aria-label="rate of change graph">
+    <line x1="10" y1="70" x2="210" y2="70" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+    ${children}
+  </svg>`;
+}
+
+const rounds = [
+  {
+    graph: axisSvg(`
+      <polygon points="30,70 80,20 80,70" fill="var(--blue)" fill-opacity=".35" stroke="var(--blue)" stroke-width="2"/>
+      <text x="52" y="90" font-size="11" fill="currentColor">0</text>
+      <text x="76" y="90" font-size="11" fill="currentColor">2</text>`),
+    prompt: "This shaded region sits above the x-axis. Is its signed area positive or negative?",
+    choices: [
+      {label:"Positive", correct:true},
+      {label:"Negative", correct:false}
+    ],
+    explain: "Above the axis always counts as positive signed area."
+  },
+  {
+    graph: axisSvg(`
+      <polygon points="30,70 80,120 80,70" fill="var(--red)" fill-opacity=".35" stroke="var(--red)" stroke-width="2"/>
+      <text x="52" y="90" font-size="11" fill="currentColor">0</text>
+      <text x="76" y="90" font-size="11" fill="currentColor">2</text>`),
+    prompt: "This shaded region sits below the x-axis. Is its signed area positive or negative?",
+    choices: [
+      {label:"Positive", correct:false},
+      {label:"Negative", correct:true}
+    ],
+    explain: "Below the axis always counts as negative signed area, no matter how big the region looks."
+  },
+  {
+    graph: axisSvg(`
+      <polygon points="30,70 80,20 80,70" fill="var(--blue)" fill-opacity=".35" stroke="var(--blue)" stroke-width="2"/>`),
+    prompt: "This region (positive, above the axis) is the rate-of-change graph f on [0,2]. What does it tell you about the quantity function F?",
+    choices: [
+      {label:"F is increasing on [0,2]", correct:true},
+      {label:"F is decreasing on [0,2]", correct:false}
+    ],
+    explain: "f > 0 on this interval, so F is increasing there."
+  },
+  {
+    graph: axisSvg(`
+      <polygon points="30,70 80,120 80,70" fill="var(--red)" fill-opacity=".35" stroke="var(--red)" stroke-width="2"/>`),
+    prompt: "This region (negative, below the axis) is f on [0,2]. What does it tell you about F?",
+    choices: [
+      {label:"F is increasing on [0,2]", correct:false},
+      {label:"F is decreasing on [0,2]", correct:true}
+    ],
+    explain: "f < 0 on this interval, so F is decreasing there."
+  },
+  {
+    graph: axisSvg(`
+      <polyline points="30,120 80,70 130,20" fill="none" stroke="var(--blue)" stroke-width="2.5"/>
+      <circle cx="80" cy="70" r="4.5" fill="var(--green)"/>
+      <text x="66" y="60" font-size="11" fill="currentColor">x = 2</text>`),
+    prompt: "f crosses the x-axis at x = 2, going from negative to positive. What happens to F at x = 2?",
+    choices: [
+      {label:"F has a relative minimum at x = 2", correct:true},
+      {label:"F has a relative maximum at x = 2", correct:false}
+    ],
+    explain: "F was decreasing (f < 0), then starts increasing (f > 0) — that's a relative minimum."
+  },
+  {
+    graph: axisSvg(`
+      <polyline points="30,20 80,70 130,120" fill="none" stroke="var(--blue)" stroke-width="2.5"/>
+      <circle cx="80" cy="70" r="4.5" fill="var(--green)"/>
+      <text x="66" y="60" font-size="11" fill="currentColor">x = 2</text>`),
+    prompt: "f crosses the x-axis at x = 2, going from positive to negative. What happens to F at x = 2?",
+    choices: [
+      {label:"F has a relative minimum at x = 2", correct:false},
+      {label:"F has a relative maximum at x = 2", correct:true}
+    ],
+    explain: "F was increasing (f > 0), then starts decreasing (f < 0) — that's a relative maximum."
+  },
+  {
+    graph: axisSvg(`
+      <polygon points="30,70 30,57 80,18 130,57 130,70" fill="var(--blue)" fill-opacity=".25" stroke="var(--blue)" stroke-width="2"/>
+      <circle cx="80" cy="18" r="4.5" fill="var(--green)"/>
+      <text x="6" y="20" font-size="11" fill="currentColor">peak of f ▸</text>`, "0 -18 220 158"),
+    prompt: "f stays positive the whole time and never crosses the axis — but it has its own peak at x = 2. What does that peak tell you about F?",
+    choices: [
+      {label:"F has a relative maximum at x = 2", correct:false},
+      {label:"F has an inflection point at x = 2 (changing fastest there)", correct:true}
+    ],
+    explain: "A max/min of f (without crossing zero) marks where F is changing fastest — an inflection point, not a max/min of F."
+  },
+  {
+    graph: `<svg viewBox="0 0 220 140" role="img" aria-label="rate of change graph">
+      <polygon points="55,110 55,70 155,30 155,110" fill="var(--blue)" fill-opacity=".35" stroke="var(--blue)" stroke-width="2"/>
+      <line x1="10" y1="110" x2="210" y2="110" stroke="currentColor" stroke-width="1.5" opacity=".55"/>
+      <text x="45" y="128" font-size="11" fill="currentColor">1 hr</text>
+      <text x="148" y="128" font-size="11" fill="currentColor">3 hr</text>
+      <text x="50" y="16" font-size="12" fill="currentColor">Area = 15 (mph·hr)</text>
+    </svg>`,
+    prompt: "f is velocity in mph, x is time in hours. The shaded region's signed area is 15. Which sentence correctly interprets it?",
+    choices: [
+      {label:"From hour 1 to hour 3, distance traveled increased by 15 miles.", correct:true},
+      {label:"From hour 1 to hour 3, speed increased by 15 mph.", correct:false}
+    ],
+    explain: "Units: (mph)·(hours) = miles — a distance, not a speed. So the quantity that changed is distance."
+  }
+];
+
+let i = 0, score = 0, answered = false;
+
+const graphEl = document.getElementById("graph");
+const promptEl = document.getElementById("prompt");
+const choicesEl = document.getElementById("choices");
+const feedbackEl = document.getElementById("feedback");
+const roundLabel = document.getElementById("round-label");
+const scoreLabel = document.getElementById("score-label");
+const nextBtn = document.getElementById("next");
+
+function render(){
+  const r = rounds[i];
+  answered = false;
+  graphEl.innerHTML = r.graph;
+  promptEl.textContent = r.prompt;
+  choicesEl.innerHTML = "";
+  feedbackEl.className = "feedback";
+  feedbackEl.textContent = "";
+  nextBtn.disabled = true;
+  roundLabel.textContent = `Round ${i + 1} of ${rounds.length}`;
+  scoreLabel.textContent = `Score: ${score}`;
+
+  r.choices.forEach((c) => {
+    const btn = document.createElement("button");
+    btn.className = "choice";
+    btn.type = "button";
+    btn.textContent = c.label;
+    btn.addEventListener("click", () => selectChoice(btn, c, r));
+    choicesEl.appendChild(btn);
+  });
+}
+
+function selectChoice(btn, choice, round){
+  if (answered) return;
+  answered = true;
+  const allBtns = choicesEl.querySelectorAll("button.choice");
+  allBtns.forEach((b) => { b.disabled = true; });
+
+  if (choice.correct){
+    btn.classList.add("correct");
+    btn.innerHTML = `<span class="mark">✓</span>${choice.label}`;
+    score += 1;
+  } else {
+    btn.classList.add("incorrect");
+    btn.innerHTML = `<span class="mark">✗</span>${choice.label}`;
+    const correctBtn = [...allBtns].find((b, idx) => round.choices[idx].correct);
+    if (correctBtn){
+      correctBtn.classList.add("correct");
+      correctBtn.innerHTML = `<span class="mark">✓</span>${round.choices[[...allBtns].indexOf(correctBtn)].label}`;
+    }
+  }
+  scoreLabel.textContent = `Score: ${score}`;
+  feedbackEl.textContent = round.explain;
+  feedbackEl.classList.add("show");
+  nextBtn.disabled = false;
+}
+
+nextBtn.addEventListener("click", () => {
+  if (i < rounds.length - 1){
+    i += 1;
+    render();
+  } else {
+    graphEl.innerHTML = "";
+    promptEl.textContent = `Case closed! Final score: ${score} / ${rounds.length}`;
+    choicesEl.innerHTML = "";
+    feedbackEl.className = "feedback show";
+    feedbackEl.textContent = "Hit Restart to run the cases again.";
+    nextBtn.disabled = true;
+  }
+});
+
+document.getElementById("restart").addEventListener("click", () => {
+  i = 0; score = 0; render();
+});
+
+render();
+</script>
+</body>
+</html>
