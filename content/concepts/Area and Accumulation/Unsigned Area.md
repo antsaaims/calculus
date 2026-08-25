@@ -6,7 +6,7 @@ tags:
   - rate-of-change
 ---
 
-I'm unsigned area's easygoing cousin — also called **total area**.
+I'm signed area's easygoing cousin. I also go by **total area**.
 
 I don't care whether a region is above or below the axis. I just want to know how much
 space it takes up, so I add every piece as a positive amount.
