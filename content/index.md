@@ -1,8 +1,12 @@
 ---
-title: Welcome to Quartz
+title: Calculus with Antsa Pierrottet
 ---
 
-Hello there! Welcome to Calculus!
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
-Just testing if $\LaTeX$  works on Quartz.
+Welcome! This is the course site for Math 2070.
 
+Everything here follows along with class: concept maps you can click through, short
+notes on each idea, flashcards, and practice games — organized by topic, not by unit
+number, so you can jump straight to whatever you need.
+
+Questions? [Reach out](mailto:REPLACE-WITH-YOUR-EMAIL@institution.edu) — *(Antsa: swap
+in your real contact/office-hours link, same placeholder as the footer.)*
