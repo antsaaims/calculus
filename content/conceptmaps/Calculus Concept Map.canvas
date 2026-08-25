@@ -20,7 +20,7 @@
 		{"id":"xintroc","type":"file","file":"concepts/Derivatives and Rates of Change/x-Intercepts of RoC.md","x":3780,"y":3480,"width":380,"height":660,"color":"4"},
 		{"id":"extremaroc","type":"file","file":"concepts/Derivatives and Rates of Change/Extrema of RoC.md","x":2880,"y":3480,"width":380,"height":680,"color":"4"},
 		{"id":"derivative","type":"file","file":"concepts/Derivatives and Rates of Change/Derivative.md","x":-960,"y":3480,"width":560,"height":660,"color":"4"},
-		{"id":"startval","type":"file","file":"concepts/Derivatives and Rates of Change/Starting Value.md","x":1250,"y":4320,"width":380,"height":660,"color":"4"},
+		{"id":"startval","type":"file","file":"concepts/Derivatives and Rates of Change/Starting Value.md","x":1250,"y":4320,"width":630,"height":660,"color":"4"},
 		{"id":"signedarea","type":"file","file":"concepts/Area and Accumulation/Signed Area.md","x":100,"y":6560,"width":500,"height":940,"color":"5"},
 		{"id":"areaunits","type":"file","file":"concepts/Area and Accumulation/Area Units.md","x":2070,"y":6560,"width":380,"height":920,"color":"5"},
 		{"id":"sentences","type":"file","file":"concepts/Interpretation/Sentences of Interpretation.md","x":4800,"y":6320,"width":500,"height":850,"color":"3"},
